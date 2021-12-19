@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoir Proba</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Calculatrice des possibilités:</h1>
+
+        <div class="form-input">
+            <label for="NInput">Entrer Le N:</label>
+            <input id="NInput" type="number" placeholder="Nombre total des elements">
+        </div>
+        <div class="form-input">
+            <label for="NInput">Entrer Le P:</label>
+            <input id="PInput" type="number" placeholder="Nombre des elements pris">
+        </div>
+        <div class="form-input checkbox">
+            <label for="order">Cocher si l'ordre est important:</label>
+            <input id="order" type="checkbox">
+        </div>
+        <div class="form-input checkbox">
+            <label for="repition">Cocher si la repition est permise:</label>
+            <input id="repition" type="checkbox">
+        </div>
+        <div class="form-input checkbox">
+            <button class="calculateBu">Calculer</button>
+        </div>
+        <h3>Le Nombre des possibilités est : </h3>
+        <h1 id="NP">&nbsp</h1>
+    </div>
+    <p id="footer">Made By : Rafik Kasmi , Acad B</p>
+
+</body>
+
+</html>
