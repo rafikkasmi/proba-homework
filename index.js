@@ -2,23 +2,30 @@ const N_input = document.querySelector("#NInput")
 const P_input = document.querySelector("#PInput")
 const repition_input = document.querySelector("#repition")
 const order_input = document.querySelector("#order")
+const finalResultInput = document.querySelector("#NP")
 
 document.querySelector(".calculateBu").addEventListener("click", () => { calculerLesPossibilites() })
 
 const afficherResultat = (end) => {
-    const obj = document.querySelector("#NP")
     let start = 0;
     let duration = 800;
     let startTimestamp = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * (end - start) + start);
+        finalResultInput.textContent = Math.floor(progress * (end - start) + start);
         if (progress < 1) {
             window.requestAnimationFrame(step);
         }
     };
     window.requestAnimationFrame(step);
+
+}
+
+const thingsGoingWrong = () => {
+    finalResultInput.textContent = "P ne peut pas etre plus grand que N";
+    N_input.value = null;
+    N_input.focus()
 
 }
 
@@ -40,6 +47,7 @@ const calculerLesPossibilites = () => {
     const repition = repition_input.checked;
     const order = order_input.checked;
     let resultat;
+    if (P > N) return thingsGoingWrong();
     //different cases
     if (order && repition) {
         resultat = N ** P;
